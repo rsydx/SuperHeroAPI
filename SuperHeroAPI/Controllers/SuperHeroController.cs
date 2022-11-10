@@ -14,6 +14,13 @@ namespace SuperHeroAPI.Controllers
                     FirstName="Peter",
                     LastName="Parker",
                     Place="New York City"
+                },
+                new SuperHero {
+                    Id=2,
+                    Name= "Ironman",
+                    FirstName="Tony",
+                    LastName="Stark",
+                    Place="Long Island"
                 }
             };
         [HttpGet]
@@ -21,6 +28,15 @@ namespace SuperHeroAPI.Controllers
         {
 
             return Ok(heroes);
+
+        }
+        [HttpGet("{id}")]
+        public async Task<ActionResult<SuperHero>> Get(int id)
+        {
+            var hero = heroes.Find(h => h.Id == id);
+            if (hero == null)
+                return BadRequest("Hero not found.");
+            return Ok(hero);
 
         }
 
