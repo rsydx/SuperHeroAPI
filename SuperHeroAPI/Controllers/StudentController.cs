@@ -40,7 +40,7 @@ namespace StudentAPI.Controllers
             return Ok(student);
 
         }
-        
+       
         [HttpPost]
         public async Task<ActionResult<List<Student>>> AddStudent(Student student)
         {
