@@ -22,7 +22,7 @@ namespace SuperHeroAPI.Controllers
                     LastName="Stark",
                     Place="Long Island"
                 }
-            };
+         };
         [HttpGet]
         public async Task<ActionResult<List<SuperHero>>> Get()
         {
