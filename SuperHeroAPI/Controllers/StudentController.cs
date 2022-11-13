@@ -40,15 +40,7 @@ namespace StudentAPI.Controllers
             return Ok(student);
 
         }
-        [HttpGet("{name}")]
-        public async Task<ActionResult<Student>> GetName(string name)
-        {
-            var student = students.Find(s => s.FirstName == name);
-            if (student == null)
-                return BadRequest("Student not found.");
-            return Ok(student);
-
-        }
+        
         [HttpPost]
         public async Task<ActionResult<List<Student>>> AddStudent(Student student)
         {
