@@ -69,7 +69,7 @@ namespace SuperHeroAPI.Controllers
             if (hero == null)
                 return BadRequest("Hero not found.");
             heroes.Remove(hero);
-            return Ok(hero);
+            return Ok(heroes);
 
         }
     }
